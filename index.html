@@ -24,11 +24,11 @@
     </div>
   </nav>
 
-  <header class="hero" id="home">
+  <header class="hero reveal" id="home">
     <div class="profile-side">
       <img src="images/Photo_profil.jpeg" alt="Ichraf Mouelhi" class="profile-pic"/>
       <h1>Ichraf Mouelhi</h1>
-      <h2 data-en="Data Analyst/Scientist | BI & AI for Good" data-fr="Data Analyst/Scientist | BI & IA pour le bien commun">Data Scientist | BI & AI for Good</h2>
+      <h2 data-en="Data Scientist | BI & AI for Good" data-fr="Data Scientist | BI & IA pour le bien commun">Data Scientist | BI & AI for Good</h2>
       <div class="social-icons">
         <a href="mailto:ichraf@example.com"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/ichraf-mouelhi/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -55,7 +55,7 @@
     </div>
   </header>
 
-  <section class="projects-preview">
+  <section class="projects-preview reveal">
     <h2 data-en="Featured Projects" data-fr="Projets en vedette">Featured Projects</h2>
     <div class="grid">
       <div class="card">
@@ -80,7 +80,7 @@
   </section>
 
   <main>
-    <section class="projects" id="projects">
+    <section class="projects reveal" id="projects">
       <h2 data-en="GitHub Projects" data-fr="Projets GitHub">GitHub Projects</h2>
       <div class="grid">
         <div class="card">
@@ -92,7 +92,7 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact reveal" id="contact">
       <h2 data-en="Contact Me" data-fr="Me Contacter">Contact Me</h2>
       <form action="mailto:ichraf@example.com" method="post" enctype="text/plain">
         <input type="text" name="name" placeholder="Name / Nom" required>
@@ -118,8 +118,6 @@
     document.getElementById("themeToggle").addEventListener("click", () => {
       document.documentElement.dataset.theme =
         document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      document.body.style.backgroundImage = document.documentElement.dataset.theme === 'dark' ? 
-        "url('green.png')" : "url('beige.png')";
     });
 
     document.getElementById("langSwitcher").addEventListener("change", (e) => {
@@ -128,6 +126,16 @@
         el.textContent = el.dataset[lang];
       });
     });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(r => observer.observe(r));
   </script>
 </body>
 </html>
+
