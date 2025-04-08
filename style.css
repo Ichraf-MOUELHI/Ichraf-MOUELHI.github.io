@@ -7,7 +7,7 @@ body {
 .hero-alt {
   display: flex;
   flex-wrap: wrap;
-  background: linear-gradient(to right, #1d5944, #146c43);
+  background: linear-gradient(to right, #f3f1e7);
   color: white;
   padding: 2rem;
   align-items: center;
