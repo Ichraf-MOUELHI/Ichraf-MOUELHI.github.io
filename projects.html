@@ -1,1 +1,71 @@
-<!-- Projects page HTML -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Ichraf Mouelhi</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="controls">
+      <button id="themeToggle">🌓</button>
+      <select id="langSwitcher">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="projects">
+    <h2>All GitHub Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">
+          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud detection">
+          <p>Fraud Detection</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">
+          <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+          <p>Graph Bitcoins</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">
+          <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
+          <p>Dashboard WaterWorld</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">
+          <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Market Study">
+          <p>Market Study</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ichraf Mouelhi</p>
+  </footer>
+
+  <script>
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    });
+    document.getElementById("langSwitcher").addEventListener("change", (e) => {
+      // Placeholder for future multilingual logic
+    });
+  </script>
+</body>
+</html>
