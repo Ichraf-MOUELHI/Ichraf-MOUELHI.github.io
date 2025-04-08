@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Ichraf Mouelhi</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="navbar">
     <ul class="nav-links">
-      <li><a class="tag" href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
-      <li><a class="tag" href="projects.html" data-en="Projects" data-fr="Projets">Projets</a></li>
-      <li><a class="tag" href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+      <li><a class="tag" href="index.html" data-en="Home">Accueil</a></li>
+      <li><a class="tag" href="projects.html" data-en="Projects">Projets</a></li>
+      <li><a class="tag active" href="contact.html" data-en="Contact">Contact</a></li>
     </ul>
     <div class="controls">
       <button id="themeToggle">🌓</button>
@@ -24,30 +24,80 @@
     </div>
   </header>
 
-  <section class="contact-section">
-    <h2 data-en="Contact Me" data-fr="Me Contacter">Me Contacter</h2>
-    <form class="contact-form" action="mailto:ichraf@example.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Nom / Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" rows="6" placeholder="Votre message..." required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+  <main class="main-container">
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 data-en="Get in Touch">Contactez-moi</h2>
+          <p data-en="Feel free to reach out for collaborations or just to say hello!">
+            N'hésitez pas à me contacter pour des collaborations ou simplement pour dire bonjour !
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:ichraf@example.com">ichraf@example.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ichraf-mouelhi/" target="_blank">linkedin.com/in/ichraf-mouelhi</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/Ichraf-MOUELHI" target="_blank">github.com/Ichraf-MOUELHI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" action="mailto:ichraf@example.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <input type="text" name="name" placeholder=" " required>
+              <label data-en="Name" data-fr="Nom">Nom</label>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder=" " required>
+              <label>Email</label>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder=" " required></textarea>
+              <label data-en="Message" data-fr="Message">Message</label>
+            </div>
+            <button type="submit" class="submit-btn" data-en="Send" data-fr="Envoyer">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Ichraf Mouelhi</p>
   </footer>
 
   <script>
+    // Thème sombre par défaut
+    document.documentElement.dataset.theme = "dark";
+    
+    // Changement de thème
     document.getElementById("themeToggle").addEventListener("click", () => {
-      document.documentElement.dataset.theme =
-        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      const newTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = newTheme;
     });
 
+    // Traduction automatique
     document.getElementById("langSwitcher").addEventListener("change", (e) => {
       const lang = e.target.value;
       document.querySelectorAll("[data-en]").forEach(el => {
-        el.textContent = el.dataset[lang];
+        if (lang === "en" && el.dataset.en) {
+          el.textContent = el.dataset.en;
+        } else if (lang === "fr") {
+          if (el.dataset.fr) {
+            el.textContent = el.dataset.fr;
+          } else if (el.tagName === "OPTION") {
+            if (el.value === "fr") el.textContent = "FR";
+            if (el.value === "en") el.textContent = "EN";
+          }
+        }
       });
     });
   </script>
