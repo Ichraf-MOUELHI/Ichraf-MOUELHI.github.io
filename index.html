@@ -1,1 +1,90 @@
-<!-- Home page HTML -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ichraf Mouelhi | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="controls">
+      <button id="themeToggle">🌓</button>
+      <select id="langSwitcher">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="hero-alt">
+    <div class="profile-side">
+      <img src="images/Photo_profil.jpeg" alt="Ichraf Mouelhi" class="profile-pic" />
+      <h1>Ichraf Mouelhi</h1>
+      <h2>Data Scientist | BI & AI for Good</h2>
+      <div class="social-icons">
+        <a href="mailto:ichraf@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ichraf-mouelhi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ichraf-MOUELHI" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="bio-side">
+      <h2>About Me</h2>
+      <p>Passionate about impactful data analysis, I design intelligent, result-oriented solutions. With technical skills in Python, BI, Machine Learning and a human-centric approach, I support high-value projects in areas like healthcare, environment and fraud detection.</p>
+      <h3>Key Skills</h3>
+      <ul class="key-skills">
+        <li>Machine Learning</li>
+        <li>Data Analysis</li>
+        <li>Data Visualization</li>
+        <li>Prediction</li>
+        <li>Classification / Clustering</li>
+        <li>Python</li>
+        <li>SQL</li>
+      </ul>
+
+      <h3>Recent Projects</h3>
+      <div class="grid">
+        <div class="card">
+          <a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">
+            <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+            <p>Fraud Detection</p>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">
+            <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+            <p>Graph Bitcoins</p>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">
+            <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
+            <p>Dashboard WaterWorld</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ichraf Mouelhi</p>
+  </footer>
+
+  <script>
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    });
+    document.getElementById("langSwitcher").addEventListener("change", (e) => {
+      // Placeholder for language toggle if needed
+    });
+  </script>
+</body>
+</html>
