@@ -1,1 +1,133 @@
-<!-- Updated HTML with background integration -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ichraf Mouelhi | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="fade-in">
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
+      <li><a href="#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+      <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+    </ul>
+    <div class="controls">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+      <select id="langSwitcher">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="profile-side">
+      <img src="images/Photo_profil.jpeg" alt="Ichraf Mouelhi" class="profile-pic"/>
+      <h1>Ichraf Mouelhi</h1>
+      <h2 data-en="Data Analyst/Scientist | BI & AI for Good" data-fr="Data Analyst/Scientist | BI & IA pour le bien commun">Data Scientist | BI & AI for Good</h2>
+      <div class="social-icons">
+        <a href="mailto:ichraf@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ichraf-mouelhi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ichraf-MOUELHI" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <a href="CV_ichraf.pdf" class="cv-btn" download data-en="Download CV" data-fr="Télécharger mon CV">Download CV</a>
+    </div>
+    <div class="bio-side">
+      <h2 data-en="About Me" data-fr="À propos de moi">About Me</h2>
+      <p data-en="Passionate about impactful data analysis, I design intelligent, result-oriented solutions."
+         data-fr="Passionnée par l’analyse de données à impact, je développe des solutions intelligentes orientées résultats.">
+         Passionate about impactful data analysis, I design intelligent, result-oriented solutions.
+      </p>
+      <h3 data-en="Key Skills" data-fr="Compétences clés">Key Skills</h3>
+      <ul class="key-skills">
+        <li>Machine Learning</li>
+        <li>Data Analysis</li>
+        <li>Data Visualization</li>
+        <li data-en="Prediction" data-fr="Prédiction">Prediction</li>
+        <li data-en="Classification / Clustering" data-fr="Classification / Clustering">Classification / Clustering</li>
+        <li>Python</li>
+        <li>SQL</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="projects-preview">
+    <h2 data-en="Featured Projects" data-fr="Projets en vedette">Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">
+          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud detection">
+          <p>Fraud Detection</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">
+          <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+          <p>Graph Bitcoins</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">
+          <img src="images/Hunger_map.jpg" alt="Water Dashboard">
+          <p>Dashboard WaterWorld</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="projects" id="projects">
+      <h2 data-en="GitHub Projects" data-fr="Projets GitHub">GitHub Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">
+            <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Market Study">
+            <p data-en="Market Study" data-fr="Étude de marché">Market Study</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 data-en="Contact Me" data-fr="Me Contacter">Contact Me</h2>
+      <form action="mailto:ichraf@example.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Name / Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ichraf Mouelhi</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.documentElement.dataset.theme =
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.body.style.backgroundImage = document.documentElement.dataset.theme === 'dark' ? 
+        "url('green.png')" : "url('beige.png')";
+    });
+
+    document.getElementById("langSwitcher").addEventListener("change", (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    });
+  </script>
+</body>
+</html>
