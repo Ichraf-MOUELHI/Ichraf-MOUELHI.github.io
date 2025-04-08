@@ -1,0 +1,103 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+.hero-alt {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #1d5944, #146c43);
+  color: white;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.profile-side {
+  text-align: center;
+  max-width: 300px;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 1rem;
+}
+.cv-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #fff;
+  color: #146c43;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-line {
+  margin: 0.4rem 0;
+}
+.bio-side {
+  max-width: 600px;
+}
+.bio-side h2 {
+  margin-top: 0;
+}
+main {
+  padding: 2rem;
+}
+.skills ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.skills li {
+  background: white;
+  padding: 1rem;
+  border-left: 5px solid #1d5944;
+  border-radius: 8px;
+}
+.projects h2 {
+  text-align: center;
+  color: #146c43;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.card p {
+  padding: 0.8rem;
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #f0f0f0;
+  color: #555;
+}
