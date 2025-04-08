@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Ichraf Mouelhi</title>
+  <title>Projets GitHub - Ichraf Mouelhi</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -11,8 +11,8 @@
 <body>
   <nav class="navbar">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="controls">
@@ -24,35 +24,27 @@
     </div>
   </nav>
 
-  <main class="projects">
-    <h2>All GitHub Projects</h2>
+  <section class="projects">
+    <h2>Mes projets GitHub</h2>
     <div class="grid">
       <div class="card">
-        <a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">
-          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud detection">
-          <p>Fraud Detection</p>
-        </a>
+        <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+        <p><a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">Fraud Detection</a></p>
       </div>
       <div class="card">
-        <a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">
-          <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
-          <p>Graph Bitcoins</p>
-        </a>
+        <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+        <p><a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">Graph Bitcoins</a></p>
       </div>
       <div class="card">
-        <a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">
-          <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
-          <p>Dashboard WaterWorld</p>
-        </a>
+        <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
+        <p><a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">Dashboard WaterWorld</a></p>
       </div>
       <div class="card">
-        <a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">
-          <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Market Study">
-          <p>Market Study</p>
-        </a>
+        <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Étude de marché">
+        <p><a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">Étude de marché</a></p>
       </div>
     </div>
-  </main>
+  </section>
 
   <footer>
     <p>© 2025 Ichraf Mouelhi</p>
@@ -60,12 +52,10 @@
 
   <script>
     document.getElementById("themeToggle").addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-    });
-    document.getElementById("langSwitcher").addEventListener("change", (e) => {
-      // Placeholder for future multilingual logic
+      document.documentElement.dataset.theme =
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     });
   </script>
 </body>
 </html>
+
