@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ichraf Mouelhi | Data Analyst/Scientist </title>
+  <title>Ichraf Mouelhi | Data Analyst/Scientist</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="navbar">
-    <ul>
-      <li><a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
-      <li><a href="projects.html" data-en="Projects" data-fr="Projets">Projets</a></li>
-      <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+    <ul class="nav-links">
+      <li><a class="tag" href="index.html">Accueil |</a></li>
+      <li><a class="tag" href="projects.html">Projets |</a></li>
+      <li><a class="tag" href="contact.html">Contact</a></li>
     </ul>
     <div class="controls">
       <button id="themeToggle">🌓</button>
@@ -27,23 +27,22 @@
   <section class="hero">
     <div class="profile-side">
       <img src="images/Photo_profil.jpeg" alt="Ichraf Mouelhi" class="profile-pic">
-      <h1 data-en="Ichraf Mouelhi" data-fr="Ichraf Mouelhi">Ichraf Mouelhi</h1>
-      <h2 data-en="Data Analyst/Scientist" data-fr="Data Analyst/Scientist">Data Analyst/Scientist</h2>
+      <h1>Ichraf Mouelhi</h1>
+      <h2>Data Analyst/Scientist</h2>
       <div class="social-icons">
         <a href="mailto:ichraf@example.com" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/ichraf-mouelhi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Ichraf-MOUELHI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       </div>
-      <a href="CV_ichraf.pdf" class="cv-btn" download data-en="Download CV" data-fr="Télécharger mon CV">Télécharger mon CV</a>
+      <a href="CV_ichraf.pdf" class="cv-btn" download>Télécharger mon CV</a>
     </div>
 
     <div class="bio-side">
-      <h2 data-en="About Me" data-fr="À propos de moi">À propos de moi</h2>
-      <p data-en="Passionate about transforming data into actionable insights..."
-         data-fr="Passionnée par la transformation de la data en leviers décisionnels, je conçois des solutions intelligentes à impact positif. Mon objectif est de faire parler les données pour créer de la valeur dans des domaines variés (santé, environnement, social...).">
-        Passionnée par la transformation de la data en leviers décisionnels, je conçois des solutions intelligentes à impact positif. Mon objectif est de faire parler les données pour créer de la valeur dans des domaines variés (santé, environnement, social...).
+      <h2>À propos de moi</h2>
+      <p>
+        Passionnée par la transformation de la data en leviers décisionnels, je conçois des solutions intelligentes à impact positif. Mon objectif est de faire parler les données pour créer de la valeur dans des domaines variés (finance, santé, environnement, social...).
       </p>
-      <h3 data-en="Key Skills" data-fr="Compétences clés">Compétences clés</h3>
+      <h3>Compétences clés</h3>
       <ul class="key-skills">
         <li>Machine Learning</li>
         <li>Data Analysis</li>
@@ -51,21 +50,35 @@
         <li>Python</li>
         <li>SQL</li>
         <li>Classification / Clustering</li>
-        <li>BI - Power BI / Tableau</li>
+        <li>Tableau/ CRM Analytics /Power BI  </li>
       </ul>
 
-      <h3 data-en="Recent Projects" data-fr="Projets récents">Projets récents</h3>
-      <div class="grid">
-        <div class="card">
-          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+      <h3>Projets récents</h3>
+      <div class="project-gallery">
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+            <img src="images/Z-score_vin.jpg" alt="Z-score Analysis">
+            <img src="images/Matrice_corrélation_Etude_de_marché.jpg" alt="Correlation Matrix">
+          </div>
           <p><a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">Fraud Detection</a></p>
         </div>
-        <div class="card">
-          <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Graph_bitcoins.jpg" alt="Bitcoin Chart">
+            <img src="images/Hub_bitcoins.jpg" alt="Bitcoin Network">
+            <img src="images/bitcoin.png" alt="Bitcoin Icon">
+          </div>
           <p><a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">Graph Bitcoins</a></p>
         </div>
-        <div class="card">
-          <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
+
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Hunger_map.jpg" alt="Hunger Map">
+            <img src="images/Disponibilité_alimentaire.jpg" alt="Food Availability">
+            <img src="images/Chicken.jpg" alt="Chicken Production">
+          </div>
           <p><a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">Dashboard WaterWorld</a></p>
         </div>
       </div>
@@ -77,15 +90,6 @@
   </footer>
 
   <script>
-    // Lang switch
-    document.getElementById("langSwitcher").addEventListener("change", (e) => {
-      const lang = e.target.value;
-      document.querySelectorAll("[data-en]").forEach(el => {
-        el.textContent = el.dataset[lang];
-      });
-    });
-
-    // Theme switch
     document.getElementById("themeToggle").addEventListener("click", () => {
       document.documentElement.dataset.theme =
         document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -93,5 +97,6 @@
   </script>
 </body>
 </html>
+
 
 
