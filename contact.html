@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Ichraf Mouelhi</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
+  <header class="navbar">
+    <ul class="nav-links">
+      <li><a class="tag" href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
+      <li><a class="tag" href="projects.html" data-en="Projects" data-fr="Projets">Projets</a></li>
+      <li><a class="tag" href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
     </ul>
     <div class="controls">
       <button id="themeToggle">🌓</button>
       <select id="langSwitcher">
-        <option value="en">EN</option>
         <option value="fr">FR</option>
+        <option value="en">EN</option>
       </select>
     </div>
-  </nav>
+  </header>
 
   <section class="contact-section">
-    <h2>Me Contacter</h2>
+    <h2 data-en="Contact Me" data-fr="Me Contacter">Me Contacter</h2>
     <form class="contact-form" action="mailto:ichraf@example.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Nom / Name" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -43,7 +43,15 @@
       document.documentElement.dataset.theme =
         document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     });
+
+    document.getElementById("langSwitcher").addEventListener("change", (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    });
   </script>
 </body>
 </html>
+
 
