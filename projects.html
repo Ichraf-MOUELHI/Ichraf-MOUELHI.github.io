@@ -1,46 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets GitHub - Ichraf Mouelhi</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
+  <header class="navbar">
+    <ul class="nav-links">
+      <li><a class="tag" href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
+      <li><a class="tag" href="projects.html" data-en="Projects" data-fr="Projets">Projets</a></li>
+      <li><a class="tag" href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
     </ul>
     <div class="controls">
       <button id="themeToggle">🌓</button>
       <select id="langSwitcher">
-        <option value="en">EN</option>
         <option value="fr">FR</option>
+        <option value="en">EN</option>
       </select>
     </div>
-  </nav>
+  </header>
 
   <section class="projects">
-    <h2>Mes projets GitHub</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+    <h2 data-en="My GitHub Projects" data-fr="Mes projets GitHub">Mes projets GitHub</h2>
+    <div class="project-gallery">
+      <div class="project">
+        <div class="gallery">
+          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+          <img src="images/Z-score_vin.jpg" alt="Z-score Analysis">
+          <img src="images/Matrice_corrélation_Etude_de_marché.jpg" alt="Correlation Matrix">
+        </div>
         <p><a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">Fraud Detection</a></p>
       </div>
-      <div class="card">
-        <img src="images/Graph_bitcoins.jpg" alt="Graph Bitcoins">
+      <div class="project">
+        <div class="gallery">
+          <img src="images/Graph_bitcoins.jpg" alt="Bitcoin Chart">
+          <img src="images/Hub_bitcoins.jpg" alt="Bitcoin Network">
+          <img src="images/bitcoin.png" alt="Bitcoin Icon">
+        </div>
         <p><a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">Graph Bitcoins</a></p>
       </div>
-      <div class="card">
-        <img src="images/Hunger_map.jpg" alt="Dashboard WaterWorld">
+      <div class="project">
+        <div class="gallery">
+          <img src="images/Hunger_map.jpg" alt="Hunger Map">
+          <img src="images/Disponibilité_alimentaire.jpg" alt="Food Availability">
+          <img src="images/Chicken.jpg" alt="Chicken Production">
+        </div>
         <p><a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">Dashboard WaterWorld</a></p>
       </div>
-      <div class="card">
-        <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Étude de marché">
+      <div class="project">
+        <div class="gallery">
+          <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Etude de marché">
+        </div>
         <p><a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">Étude de marché</a></p>
       </div>
     </div>
@@ -55,7 +69,15 @@
       document.documentElement.dataset.theme =
         document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     });
+
+    document.getElementById("langSwitcher").addEventListener("change", (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    });
   </script>
 </body>
 </html>
+
 
