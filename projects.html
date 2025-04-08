@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets GitHub - Ichraf Mouelhi</title>
+  <title>Projets - Ichraf Mouelhi</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="navbar">
     <ul class="nav-links">
-      <li><a class="tag" href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
-      <li><a class="tag" href="projects.html" data-en="Projects" data-fr="Projets">Projets</a></li>
-      <li><a class="tag" href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+      <li><a class="tag" href="index.html" data-en="Home">Accueil</a></li>
+      <li><a class="tag active" href="projects.html" data-en="Projects">Projets</a></li>
+      <li><a class="tag" href="contact.html" data-en="Contact">Contact</a></li>
     </ul>
     <div class="controls">
       <button id="themeToggle">🌓</button>
@@ -24,56 +24,84 @@
     </div>
   </header>
 
-  <section class="projects">
-    <h2 data-en="My GitHub Projects" data-fr="Mes projets GitHub">Mes projets GitHub</h2>
-    <div class="project-gallery">
-      <div class="project">
-        <div class="gallery">
-          <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
-          <img src="images/Z-score_vin.jpg" alt="Z-score Analysis">
-          <img src="images/Matrice_corrélation_Etude_de_marché.jpg" alt="Correlation Matrix">
+  <main class="main-container">
+    <section class="projects-section">
+      <h2 data-en="My Projects">Mes Projets GitHub</h2>
+      <div class="project-gallery">
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Robustesse_Kmeans_Fraud_billets.jpg" alt="Fraud Detection">
+            <img src="images/Z-score_vin.jpg" alt="Z-score Analysis">
+            <img src="images/Matrice_corrélation_Etude_de_marché.jpg" alt="Correlation Matrix">
+          </div>
+          <h3 data-en="Fraud Detection">Détection de Fraude</h3>
+          <p data-en="Machine learning project for banknote authentication">Projet de machine learning pour l'authentification de billets</p>
+          <a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank" class="project-link" data-en="View Project">Voir le projet</a>
         </div>
-        <p><a href="https://github.com/Ichraf-MOUELHI/Fraud_detection" target="_blank">Fraud Detection</a></p>
-      </div>
-      <div class="project">
-        <div class="gallery">
-          <img src="images/Graph_bitcoins.jpg" alt="Bitcoin Chart">
-          <img src="images/Hub_bitcoins.jpg" alt="Bitcoin Network">
-          <img src="images/bitcoin.png" alt="Bitcoin Icon">
+
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Graph_bitcoins.jpg" alt="Bitcoin Chart">
+            <img src="images/Hub_bitcoins.jpg" alt="Bitcoin Network">
+            <img src="images/bitcoin.png" alt="Bitcoin Icon">
+          </div>
+          <h3 data-en="Bitcoin Network Analysis">Analyse du réseau Bitcoin</h3>
+          <p data-en="Graph analysis of Bitcoin transactions">Analyse graphique des transactions Bitcoin</p>
+          <a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank" class="project-link" data-en="View Project">Voir le projet</a>
         </div>
-        <p><a href="https://github.com/Ichraf-MOUELHI/Graph-Bitcoins" target="_blank">Graph Bitcoins</a></p>
-      </div>
-      <div class="project">
-        <div class="gallery">
-          <img src="images/Hunger_map.jpg" alt="Hunger Map">
-          <img src="images/Disponibilité_alimentaire.jpg" alt="Food Availability">
-          <img src="images/Chicken.jpg" alt="Chicken Production">
+
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Hunger_map.jpg" alt="Hunger Map">
+            <img src="images/Disponibilité_alimentaire.jpg" alt="Food Availability">
+            <img src="images/Chicken.jpg" alt="Chicken Production">
+          </div>
+          <h3 data-en="WaterWorld Dashboard">Dashboard WaterWorld</h3>
+          <p data-en="Food security data visualization">Visualisation de données sur la sécurité alimentaire</p>
+          <a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank" class="project-link" data-en="View Project">Voir le projet</a>
         </div>
-        <p><a href="https://github.com/Ichraf-MOUELHI/Dashboard-WaterWorld" target="_blank">Dashboard WaterWorld</a></p>
-      </div>
-      <div class="project">
-        <div class="gallery">
-          <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Etude de marché">
+
+        <div class="project">
+          <div class="gallery">
+            <img src="images/Clustering_K-Means_Etude_de_marché.jpg" alt="Market Study">
+          </div>
+          <h3 data-en="Market Analysis">Étude de marché</h3>
+          <p data-en="Customer segmentation using clustering">Segmentation client avec algorithme de clustering</p>
+          <a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank" class="project-link" data-en="View Project">Voir le projet</a>
         </div>
-        <p><a href="https://github.com/Ichraf-MOUELHI/Etude_de_marche" target="_blank">Étude de marché</a></p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Ichraf Mouelhi</p>
   </footer>
 
   <script>
+    // Thème sombre par défaut
+    document.documentElement.dataset.theme = "dark";
+    
+    // Changement de thème
     document.getElementById("themeToggle").addEventListener("click", () => {
-      document.documentElement.dataset.theme =
-        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      const newTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = newTheme;
     });
 
+    // Traduction automatique
     document.getElementById("langSwitcher").addEventListener("change", (e) => {
       const lang = e.target.value;
       document.querySelectorAll("[data-en]").forEach(el => {
-        el.textContent = el.dataset[lang];
+        if (lang === "en" && el.dataset.en) {
+          el.textContent = el.dataset.en;
+        } else if (lang === "fr") {
+          // Pour revenir au français
+          if (el.tagName === "OPTION") {
+            if (el.value === "fr") el.textContent = "FR";
+            if (el.value === "en") el.textContent = "EN";
+          } else if (el.dataset.fr) {
+            el.textContent = el.dataset.fr;
+          }
+        }
       });
     });
   </script>
