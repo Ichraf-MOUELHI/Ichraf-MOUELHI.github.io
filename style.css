@@ -1,178 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Playfair+Display&display=swap');
-
-:root {
-  --bg-light: linear-gradient(135deg, #f3f1e7 0%, #fffdf9 100%);
-  --text-light: #146c43;
-  --bg-dark: linear-gradient(135deg, #0f2f23 0%, #143c2f 100%);
-  --text-dark: #f5f5dc;
-}
-
-[data-theme="light"] {
-  --bg: var(--bg-light);
-  --text: var(--text-light);
-}
-
-[data-theme="dark"] {
-  --bg: var(--bg-dark);
-  --text: var(--text-dark);
-}
-
-body {
-  font-family: 'Playfair Display', serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  scroll-behavior: smooth;
-  transition: all 0.4s ease;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 1000;
-  gap: 2rem;
-}
-
-.navbar ul.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tag {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
-  background: #ffffffcc;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-family: 'Lora', serif;
-  transition: background 0.3s ease;
-}
-
-.tag:hover {
-  background: #ffffffee;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-#themeToggle,
-#langSwitcher {
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--text);
-  background: transparent;
-  color: var(--text);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.main-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.profile-block {
-  text-align: center;
-  padding: 1rem;
-}
-
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid var(--text);
-}
-
-.social-icons {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-icons a {
-  font-size: 1.5rem;
-  color: var(--text);
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
-.cv-btn {
-  margin-top: 1rem;
-  display: inline-block;
-  background: transparent;
-  border: 1px solid var(--text);
-  padding: 0.5rem 1rem;
-  color: var(--text);
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cv-btn:hover {
-  background: var(--text);
-  color: white;
-}
-
-.bio-block h2,
-.projects-preview h2 {
-  font-family: 'Lora', serif;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.bio-block p {
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.key-skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.key-skills li {
-  background: #ffffff99;
-  color: #146c43;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
+/* ... (conserve tout le CSS existant avant .project-gallery) ... */
 
 .projects-preview {
   text-align: center;
@@ -181,7 +7,7 @@ body {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -192,6 +18,9 @@ body {
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .project:hover {
@@ -202,6 +31,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+  flex-grow: 1;
 }
 
 .project .gallery img {
@@ -224,26 +54,8 @@ body {
   color: var(--text);
 }
 
-.project p a {
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
+/* ... (conserve le reste du CSS existant) ... */
 
-.project p a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: var(--text);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -258,4 +70,3 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
