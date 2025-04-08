@@ -5,6 +5,9 @@
   --text-light: #146c43;
   --bg-dark: linear-gradient(135deg, #0f2f23 0%, #143c2f 100%);
   --text-dark: #f5f5dc;
+  --skill-color: rgba(20, 108, 67, 0.8);
+  --skill-color-hover: rgba(20, 108, 67, 1);
+  --text-on-skill: white;
 }
 
 [data-theme="light"] {
@@ -54,17 +57,26 @@ body {
 
 .tag {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-on-skill);
   font-weight: bold;
-  background: #ffffffcc;
-  padding: 0.4rem 1rem;
+  background: var(--skill-color);
+  padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-family: 'Lora', serif;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tag:hover {
-  background: #ffffffee;
+  background: var(--skill-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tag.active {
+  background: var(--skill-color-hover);
+  box-shadow: 0 0 0 2px white;
 }
 
 .controls {
@@ -198,13 +210,21 @@ body {
 }
 
 .key-skills li {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--text);
-  padding: 0.5rem 1rem;
+  background: var(--skill-color);
+  color: var(--text-on-skill);
+  padding: 0.6rem 1.2rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.key-skills li:hover {
+  background: var(--skill-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .projects-preview {
@@ -276,128 +296,7 @@ body {
   text-decoration: underline;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: auto;
-  font-size: 0.9rem;
-  color: var(--text);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .profile-block {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-  
-  .project .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .project .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .project .gallery img {
-    height: 80px;
-  }
-}
-/* Projects Page Specific Styles */
-.projects-section {
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.projects-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.projects-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: var(--text);
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-}
-
-.project {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.project h3 {
-  font-family: 'Lora', serif;
-  margin: 1rem 0 0.5rem;
-  color: var(--text);
-}
-
-.project p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-.project-link {
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  background: var(--text);
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.project-link:hover {
-  background: white;
-  color: var(--text);
-}
-
-/* Contact Page Specific Styles */
-.contact-section {
-  padding: 2rem 0;
-}
-
+/* Contact Page Styles */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -421,11 +320,6 @@ footer {
   background: var(--text);
 }
 
-.contact-info p {
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
 .contact-methods {
   display: flex;
   flex-direction: column;
@@ -441,30 +335,6 @@ footer {
 .contact-item i {
   font-size: 1.5rem;
   color: var(--text);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-}
-
-.contact-item a {
-  color: var(--text);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-
-.contact-form-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -481,29 +351,6 @@ footer {
   border-radius: 6px;
   color: var(--text);
   font-family: inherit;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form-group label {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  padding: 0 0.5rem;
-  background: var(--bg);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label {
-  top: -0.6rem;
-  font-size: 0.8rem;
 }
 
 .submit-btn {
@@ -524,17 +371,23 @@ footer {
   color: var(--text);
 }
 
-/* Active nav item */
-.nav-links .tag.active {
-  background: var(--text);
-  color: white;
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .contact-grid {
+  .hero-grid, .contact-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+  }
+  
+  .profile-block {
+    margin-bottom: 2rem;
   }
   
   .contact-info {
@@ -545,14 +398,26 @@ footer {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
   
-  .contact-methods {
-    align-items: center;
+  .project-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
+  .project .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project .gallery img {
+    height: 80px;
   }
 }
